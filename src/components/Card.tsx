@@ -9,7 +9,7 @@ export const Card = ({ title, img, alt, description }: CardProps) => {
   return (
     <div className="mx-auto my-2 w-11/12 lg:w-10/12">
       <div className="d-card bg-base-100 shadow-xl md:d-card-side">
-        <figure className="w-64">
+        <figure className="w-60 mx-auto">
           <img className="" src={img} alt={alt} />
         </figure>
         <div className="d-card-body">
