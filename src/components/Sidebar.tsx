@@ -1,12 +1,12 @@
 import { ChevronFirst, ChevronLast } from "lucide-react";
-import { ReactNode, useContext } from "react";
+import React, { ReactNode, useContext } from "react";
 import { DummyLogo } from "../icons/DummyLogo.tsx";
 import SidebarContext from "../context/SideBarContext.tsx";
 import { Link } from "react-router-dom";
 
-type SidebarProps = {
+interface SidebarProps extends React.HTMLAttributes<HTMLDivElement>{
   children: ReactNode;
-};
+}
 export const Sidebar = ({ children }: SidebarProps) => {
   const { expand, setExpand } = useContext(SidebarContext);
 
@@ -18,7 +18,8 @@ export const Sidebar = ({ children }: SidebarProps) => {
             <span
               className={`overflow-hidden transition-all ${
                 expand
-                  ? "xxxs:w-[17rem] xxs:w-[21.5rem] xs:w-[22.5rem] sm:w-32"
+                  ? // ? "xxxs:w-[17rem] xxs:w-[21.5rem] xs:w-[22.5rem] sm:w-32"
+                    "w-32"
                   : "w-0"
               }`}
             >
