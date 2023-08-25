@@ -8,6 +8,8 @@ type SidebarItemProps = {
   active?: boolean;
   alert?: boolean;
   to: string;
+  hasBadge?: boolean;
+  badgeText?: string;
 };
 export const SidebarItem = ({
   icon,
@@ -15,6 +17,8 @@ export const SidebarItem = ({
   active,
   alert,
   to,
+  hasBadge,
+  badgeText,
 }: SidebarItemProps) => {
   const { expand, setExpand } = useContext(SidebarContext);
   return (
@@ -33,6 +37,7 @@ export const SidebarItem = ({
         `}
         >
           {icon}
+          {!expand && hasBadge ? <span className={`absolute top-[0] right-[-12px] z-10 ${badgeText !== '0' ? 'd-badge d-badge-sm d-badge-info' : 'hidden'}`}>{badgeText}</span> : null}
           <span
             className={`
             overflow-hidden transition-all
@@ -40,6 +45,7 @@ export const SidebarItem = ({
              `}
           >
             {text}
+            {expand && hasBadge ? <span className={`absolute top-[11px] right-[0] z-10 ${badgeText !== '0' ? 'd-badge d-badge-sm d-badge-info' : 'hidden'}`}>{badgeText}</span> : null}
           </span>
           {alert && (
             <div className="absolute right-2 h-2 w-2 rounded bg-primary" />
