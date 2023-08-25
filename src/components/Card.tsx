@@ -3,14 +3,15 @@ type CardProps = {
   alt: string;
   img: string;
   description: string;
+  onClick?: () => void;
 };
 
-export const Card = ({ title, img, alt, description }: CardProps) => {
+export const Card = ({ title, img, alt, description, onClick }: CardProps) => {
   return (
-    <div className="mx-auto my-2 w-11/12 lg:w-10/12">
-      <div className="d-card bg-base-100 shadow-xl md:d-card-side">
-        <figure className="w-60 mx-auto">
-          <img className="" src={img} alt={alt} />
+    <div className="mx-auto my-2 w-full lg:w-10/12">
+      <div className="d-card bg-base-100 shadow-xl sm:d-card-side">
+        <figure className="w-72 mx-auto">
+          <img className="object-cover w-full" src={img} alt={alt} />
         </figure>
         <div className="d-card-body">
           <h2 className="d-card-title text-lg">{title}</h2>
@@ -23,7 +24,9 @@ export const Card = ({ title, img, alt, description }: CardProps) => {
             <option>28g</option>
           </select>
           <div className="d-card-actions mt-2 justify-end">
-            <button className="d-btn d-btn-primary text-white">
+            <button
+                onClick={onClick}
+                className="d-btn d-btn-primary text-white">
               Add to cart
             </button>
           </div>
