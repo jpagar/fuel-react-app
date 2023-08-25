@@ -14,7 +14,8 @@ export const ScrollableContent = ({
       <div className="overflow-hidden">
         <div className="flex h-full overflow-hidden">
           <div className="flex-1 overflow-auto">
-            <div className="lg:grid lg:grid-cols-2">{children}</div>
+            {/*<div className="lg:grid lg:grid-cols-2">{children}</div>*/}
+            <div className="">{children}</div>
           </div>
         </div>
       </div>
