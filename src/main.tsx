@@ -9,20 +9,20 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { CategoryMenus } from "./pages/shop/CategoryMenus.tsx";
-import { Concentrates, Flower, Edibles, VapePens } from "./pages/categories";
 import { ShoppingCart } from "./pages/cart";
 import { OrderHistory } from "./pages/orders";
 import { ErrorPage } from "./pages/ErrorPage.tsx";
+import {ProductListing} from "./pages/product-listing/ProductListing.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<ErrorPage />}>
       <Route>
         <Route path="shop" element={<CategoryMenus />} />
-        <Route path="shop/flower" element={<Flower />} />
-        <Route path="shop/edibles" element={<Edibles />} />
-        <Route path="shop/vape-pens" element={<VapePens />} />
-        <Route path="shop/concentrates" element={<Concentrates />} />
+        <Route path="shop/flower" element={<ProductListing />} />
+        <Route path="shop/edibles" element={<ProductListing />} />
+        <Route path="shop/vape-pens" element={<ProductListing />} />
+        <Route path="shop/concentrates" element={<ProductListing />} />
       </Route>
       <Route>
         <Route path="cart" element={<ShoppingCart />}></Route>
