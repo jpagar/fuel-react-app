@@ -1,10 +1,10 @@
 import { CartItem } from "./CartItem.tsx";
 import { CartTotal } from "./CartTotal.tsx";
-import {useStore} from "../../store.ts";
+import {useShoppingCartStore} from "../../stores/useShoppingCartStore.ts";
 import {EmptyCart} from "./EmptyCart.tsx";
 
 export const ShoppingCart = () => {
-  const {cart,removeItem, getShoppingCartQuantity, getShoppingCartTotal} = useStore()
+  const {cart,removeItem, getShoppingCartQuantity, getShoppingCartTotal} = useShoppingCartStore()
 
   return (
     <div className="container flex flex-col items-center">
